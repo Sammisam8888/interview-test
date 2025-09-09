@@ -1,34 +1,30 @@
 function getProfile() {
     return {
         id: 1,
-        name: "Alice Johnson",
+        name: "Alice",
         role: "Frontend Engineer",
-        skills: [
-            "React",
-            "Redux",
-            "JavaScript",
-            "CSS",
-            "HTML",
-            "TypeScript",
-            "Node.js",
-            "Webpack",
-            "Babel",
-            "Testing Library"
-        ],
-        experience: [
-            {
-                company: "TechCorp",
-                years: 2,
-                projects: ["UI Redesign", "Admin Dashboard", "Internal Tools"]
-            },
-            {
-                company: "WebSolutions",
-                years: 3,
-                projects: ["E-Commerce", "Landing Pages", "CMS Migration"]
-            }
-        ],
-        hobbies: ["Reading", "Gaming", "Traveling", "Photography"]
+        skills: ["React", "Redux", "JavaScript", "CSS"],
+        hobbies: ["Reading", "Gaming", "Traveling"],
+        status: "Active"
     };
 }
 
-console.log("MAIN BRANCH: Loaded Alice’s Profile");
+function getAddress() {
+    return {
+        city: "New York",
+        country: "USA",
+        zip: "10001"
+    };
+}
+
+function getProjects() {
+    return ["UI Redesign", "Admin Dashboard", "CMS Migration"];
+}
+
+function getPreferences() {
+    return {
+        theme: "light",
+        language: "English",
+        notifications: true
+    };
+}
