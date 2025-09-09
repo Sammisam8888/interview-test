@@ -1,6 +1,34 @@
-function greet() {
-    console.log("Hello from FEATURE branch!");
-    console.log("This is extra code in FEATURE.");
+function getProfile() {
+    return {
+        id: 1,
+        name: "Alice Johnson",
+        role: "Frontend Engineer",
+        skills: [
+            "React",
+            "Redux",
+            "JavaScript",
+            "CSS",
+            "HTML",
+            "TypeScript",
+            "Node.js",
+            "Webpack",
+            "Babel",
+            "Testing Library"
+        ],
+        experience: [
+            {
+                company: "TechCorp",
+                years: 2,
+                projects: ["UI Redesign", "Admin Dashboard", "Internal Tools"]
+            },
+            {
+                company: "WebSolutions",
+                years: 3,
+                projects: ["E-Commerce", "Landing Pages", "CMS Migration"]
+            }
+        ],
+        hobbies: ["Reading", "Gaming", "Traveling", "Photography"]
+    };
 }
 
-greet();
+console.log("MAIN BRANCH: Loaded Alice’s Profile");
