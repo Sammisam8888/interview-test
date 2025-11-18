@@ -1,18 +1,16 @@
-from django.conf import settings
+from flask import current_app
 from datetime import datetime
 from pymongo.errors import PyMongoError
 
 def create_task(description, priority):
     """
     Service function to handle the business logic of creating a new task.
-    Accepts 'description' and 'priority' arguments.
+    Now accepts a 'priority' argument.
     """
     
-    # Get the MongoDB 'tasks' collection from the Django settings
+    # Get the MongoDB 'tasks' collection from the Flask app context
     try:
-        db = settings.MONGO_DB_CLIENT
-        if db is None:
-             raise PyMongoError("Database client is not initialized.")
+        db = current_app.config['MONGO_DB_CLIENT']
         tasks_collection = db.tasks
     except Exception as e:
         raise PyMongoError(f"Could not access database collection: {e}")
@@ -31,7 +29,7 @@ def create_task(description, priority):
     #    And convert `created_at` (datetime) to a string (`.isoformat()`)
     # 6. Return the complete new task dictionary.
     #
-    #    Note: Let potential PyMongoError exceptions propagate up to the view.
+    #    Note: Let potential PyMongoError exceptions propagate up to the route handler.
     # --- End of TODO ---
 
     # --- START CANDIDATE CODE HERE ---
