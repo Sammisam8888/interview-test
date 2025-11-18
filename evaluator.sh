@@ -26,6 +26,13 @@ if [ ! -f ".env" ]; then
     exit 1
 fi
 
+# Check if port is already in use
+if lsof -Pi :$SERVER_PORT -sTCP:LISTEN -t >/dev/null ; then
+    echo -e "${RED}Error: Port $SERVER_PORT is already in use.${NC}"
+    echo -e "Please stop any running Flask instances before starting the evaluator."
+    exit 1
+fi
+
 # 2. Start the Server
 echo -e "Starting Flask server..."
 # We use 'flask run' or python app.py. Assuming python app.py as per instructions
