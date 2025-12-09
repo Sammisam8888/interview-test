@@ -29,9 +29,5 @@ function getPreferences() {
     };
 }
 
-module.exports = {
-    getProfile,
-    getAddress,
-    getProjects,
-    getPreferences
-};
+// Export functions as ES module named exports for Next.js usage
+export { getProfile, getAddress, getProjects, getPreferences };
